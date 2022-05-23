@@ -27,7 +27,7 @@ import query
 from query import games, platforms # noqa
 # from query import BL3
 from shift import ShiftClient, Status
-from common import _L, INFO, DEBUG, DIRNAME
+from common import _L, INFO, DEBUG, DATA_DIR
 
 
 client = None
@@ -200,7 +200,7 @@ def main(args):
 if __name__ == "__main__":
     import os
     # only print license text on first use
-    if not os.path.exists(os.path.join(DIRNAME, "data", ".cookies.save")):
+    if not os.path.exists(os.path.join(DATA_DIR, ".cookies.save")):
         print(LICENSE_TEXT)
 
     # build argument parser

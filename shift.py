@@ -24,7 +24,7 @@ import pickle
 import requests
 from bs4 import BeautifulSoup as BSoup
 
-from common import _L, DIRNAME
+from common import _L, DATA_DIR
 
 base_url = "https://shift.gearboxsoftware.com"
 
@@ -115,7 +115,7 @@ class ShiftClient:
         from os import path
         self.client = requests.session()
         self.last_status = Status.NONE
-        self.cookie_file = path.join(DIRNAME, "data", ".cookies.save")
+        self.cookie_file = path.join(DATA_DIR, ".cookies.save")
         # try to load cookies. Query for login data if not present
         if not self.__load_cookie():
             print("First time usage: Login to your SHiFT account...")

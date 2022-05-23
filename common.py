@@ -20,11 +20,13 @@
 #
 #############################################################################
 import logging
+import os
 from logging import NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL
 from os import path
 
 FILEPATH = path.realpath(__file__)
 DIRNAME = path.dirname(FILEPATH)
+DATA_DIR = os.environ.get("DATA_DIR", path.join(DIRNAME, "data"))
 
 
 def initLogger():

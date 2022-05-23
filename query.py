@@ -23,7 +23,7 @@ import sqlite3
 import requests
 from bs4 import BeautifulSoup as BSoup
 
-from common import _L, DIRNAME
+from common import _L, DATA_DIR
 
 platforms = ["steam", "epic", "ps", "xbox"]
 # will be filled later
@@ -76,8 +76,8 @@ class Key:
 def open_db():
     from os import path, makedirs
     global conn, c
-    makedirs(path.join(DIRNAME, "data"), exist_ok=True)
-    conn = sqlite3.connect(path.join(DIRNAME, "data", "keys.db"),
+    makedirs(DATA_DIR, exist_ok=True)
+    conn = sqlite3.connect(path.join(DATA_DIR, "keys.db"),
                            detect_types=sqlite3.PARSE_DECLTYPES)
     c = conn.cursor()
 
